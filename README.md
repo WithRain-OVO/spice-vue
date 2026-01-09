@@ -1,4 +1,4 @@
-# vuedemo
+# spice-vue
 
 ## Project setup
 ```
