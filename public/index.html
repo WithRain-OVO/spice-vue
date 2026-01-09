@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- 加载SPICE HTML5客户端脚本 -->
+    <!-- ES2015/ES6 modules polyfill -->
+    <script type="module">
+        window._spice_has_module_support = true;
+    </script>
+    <script>
+        window.addEventListener("load", function() {
+            if (window._spice_has_module_support) return;
+            var loader = document.createElement("script");
+            loader.src = "/lib/spice-html5/thirdparty/browser-es-module-loader/dist/browser-es-module-loader.js";
+            document.head.appendChild(loader);
+        });
+    </script>
+
+    <script type="module" crossorigin="anonymous">
+        import * as SpiceHtml5 from '/lib/spice-html5/main.js';
+        
+        // 将SpiceHtml5对象挂载到window全局对象，供Vue组件使用
+        window.SpiceHtml5 = SpiceHtml5;
+    </script>
+  </body>
+</html>
