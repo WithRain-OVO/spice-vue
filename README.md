@@ -24,3 +24,4 @@ yarn lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 这是一个基于spice官方的spice-html5的spice的vue版本，可直接使用
+This is a Vue version of SPICE based on the official SPICE-HTML5, which can be used directly.
